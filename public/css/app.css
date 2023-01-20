@@ -1,40 +1,80 @@
-@charset "UTF-8";
-@font-face {
-  font-family: "playfair";
-  src: url("../../public/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-/*
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
 
-//* Création de variable SASS
-$couleurRouge : #f71b09;
-
-// BOOTSTRAP --------------------------------------------------------- //
-
-//* Création de Spacer 
-$spacer : 5px;
-
-$spacers : map-merge($spacers, (
-    0 : 0px ,
-    1 : $spacer*1 ,
-    2 : $spacer*2 ,
-    3 : $spacer*3 ,
-    4 : $spacer*4 ,
-    5 : $spacer*5 ,
-    6 : $spacer*8 ,
-    7 : $spacer*10 ,
-));
-
-$couleur-perso : (
-    "orange" : rgb(207, 130, 22),
-    "rose"   : #df46c8,
-);
-
-$theme-colors : map-merge($theme-colors , $couleur-perso);
-
-*/
 body {
+  height: 100vh;
+  display: flex;
   margin: 50px;
-  background: rgb(130, 247, 255);
+  background: rgb(9, 110, 117);
+  font-family: "playfair"; src: url("../../public/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+  flex-direction: column;
+}
+
+.headerJeu{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.header2Jeu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+#h1{
+  font-family: "Playfair Display";
+  font-weight: bold;
+  text-align: center;;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
 }
