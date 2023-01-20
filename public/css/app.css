@@ -1,6 +1,3 @@
-
-
-
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +9,7 @@ body {
   display: flex;
   margin: 50px;
   background: rgb(9, 110, 117);
-  font-family: "playfair"; src: url("../../public/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+  font-family:Arial, Helvetica, sans-serif;
   flex-direction: column;
 }
 
@@ -36,6 +33,8 @@ body {
 }
 
 .memory-game {
+  /* display: flex; */
+  justify-content: center;
   width: 640px;
   height: 640px;
   margin: auto;
@@ -45,8 +44,11 @@ body {
 }
 
 .memory-card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  /* width: calc(25% - 10px);
+  height: calc(33.333% - 10px); */
+  width: 220px;
+  height: 200px;
+  border-radius: 50%;
   margin: 5px;
   position: relative;
   transform: scale(1);
@@ -71,7 +73,7 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #1C7CCC;
+  background: #59aaec;
   backface-visibility: hidden;
 }
 
